@@ -1,0 +1,20 @@
+<!-- display an unordered list of the planet data -->
+<ul>
+{% for planet in site.data.planet-list %}
+  <li><strong>{{ planet.name }}</strong> has color {{ planet.color }}</li>
+{% endfor %}
+</ul>
+
+<!-- display a table of the planet data -->
+<table>
+    <thead><th>Planet</th><th>Atmosphere</th><th>Color</th></thead>
+    <tbody>
+        {% for planet in site.data.planet-list %}
+        <tr>
+            <td>{{ planet.name }}</td>
+            <td>{% if planet.atmosphere %}{{ planet.atmosphere }}{% endif %}</td>
+            <td>{{ planet.color }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
